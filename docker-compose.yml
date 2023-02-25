@@ -1,15 +1,13 @@
 version: '3.7'
 services:
   php:
-    build:
-      dockerfile: php_dockerfile
+    build: './docker/php/'
     volumes:
-     - ./public/:/var/www/html
+     - ./:/var/www/html
     container_name: web
 
   apache:
-    build:
-      dockerfile: apache_dockerfile
+    build: './docker/apache/'
     ports:
      - "8015:80"
      - "443:443"
@@ -17,7 +15,7 @@ services:
       - php
       - db_mysql
     volumes:
-     - ./public/:/var/www/html
+     - ./:/var/www/html
     container_name: apache
 
   db_mysql:

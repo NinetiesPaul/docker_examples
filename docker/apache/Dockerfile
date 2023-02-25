@@ -7,5 +7,3 @@ COPY vhost.conf /usr/local/apache2/conf/vhost.conf
 
 RUN echo "Include /usr/local/apache2/conf/vhost.conf" \
     >> /usr/local/apache2/conf/httpd.conf
-
-#RUN chown -R www-data:www-data /var/www/html
