@@ -1,20 +1,26 @@
 version: '3.7'
 services:
-  web:
+  php:
+    build:
+      dockerfile: php_dockerfile
+    volumes:
+     - ./public/:/var/www/html
     container_name: web
-    build: .
+
+  apache:
+    build:
+      dockerfile: apache_dockerfile
     ports:
      - "8015:80"
      - "443:443"
+    depends_on:
+      - php
+      - db_mysql
     volumes:
-     - ./:/var/www/html
-    links:
-     - db_mysql
-     - db_pgsql
-     - db_pgsql_testing
+     - ./public/:/var/www/html
+    container_name: apache
 
   db_mysql:
-    container_name: db_mysql
     image: mysql:5.7
     ports:
       - "33060:3306"
@@ -24,32 +30,7 @@ services:
      - MYSQL_PASSWORD=root
      - MYSQL_ROOT_PASSWORD=root
      - MYSQL_DATABASE=db_name
-
-  db_pgsql:
-    container_name: db_pgsql
-    image: postgres
-    ports:
-      - "54322:5432"
-    volumes:
-      - db_pgsql_vol:/var/lib/postgresql/data
-    environment:
-     - POSTGRES_PASSWORD=root
-     - POSTGRES_USER=root
-     - POSTGRES_DB=db_name
-
-  db_pgsql_testing:
-    container_name: db_pgsql_testing
-    image: postgres
-    ports:
-      - "54323:5432"
-    volumes:
-      - db_pgsql_testing_vol:/var/lib/postgresql/data
-    environment:
-     - POSTGRES_PASSWORD=root
-     - POSTGRES_USER=root
-     - POSTGRES_DB=db_name
+    container_name: db_mysql
 
 volumes:
   db_mysql_vol:
-  db_pgsql_vol:
-  db_pgsql_testing_vol:
