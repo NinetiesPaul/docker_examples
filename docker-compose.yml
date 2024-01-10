@@ -2,7 +2,7 @@ version: '3.7'
 services:
   web:
     container_name: web
-    build: .
+    build: './docker/php/'
     ports:
      - "8015:80"
      - "443:443"
