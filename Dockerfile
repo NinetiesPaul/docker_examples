@@ -23,7 +23,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 RUN docker-php-ext-configure gd --with-freetype --with-jpeg --enable-gd
 
-RUN docker-php-ext-install mysqli pdo_mysql pdo_pgsql gd
+RUN docker-php-ext-install mysqli pdo_mysql gd
 
 RUN docker-php-ext-enable gd
 

@@ -10,8 +10,6 @@ services:
      - ./:/var/www/html
     links:
      - db_mysql
-     - db_pgsql
-     - db_pgsql_testing
 
   db_mysql:
     container_name: db_mysql
