@@ -25,31 +25,5 @@ services:
      - MYSQL_ROOT_PASSWORD=root
      - MYSQL_DATABASE=db_name
 
-  db_pgsql:
-    container_name: db_pgsql
-    image: postgres
-    ports:
-      - "54322:5432"
-    volumes:
-      - db_pgsql_vol:/var/lib/postgresql/data
-    environment:
-     - POSTGRES_PASSWORD=root
-     - POSTGRES_USER=root
-     - POSTGRES_DB=db_name
-
-  db_pgsql_testing:
-    container_name: db_pgsql_testing
-    image: postgres
-    ports:
-      - "54323:5432"
-    volumes:
-      - db_pgsql_testing_vol:/var/lib/postgresql/data
-    environment:
-     - POSTGRES_PASSWORD=root
-     - POSTGRES_USER=root
-     - POSTGRES_DB=db_name
-
 volumes:
   db_mysql_vol:
-  db_pgsql_vol:
-  db_pgsql_testing_vol:
