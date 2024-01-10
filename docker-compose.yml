@@ -1,27 +1,10 @@
 version: '3.7'
 services:
-  web:
-    container_name: web
-    build: .
+  php:
+    container_name: php
+    build: './docker/php/'
     ports:
-     - "8015:80"
+     - "8015:8015"
      - "443:443"
     volumes:
      - ./:/var/www/html
-    links:
-     - db_mysql
-
-  db_mysql:
-    container_name: db_mysql
-    image: mysql:5.7
-    ports:
-      - "33060:3306"
-    volumes:
-      - db_mysql_vol:/var/lib/mysql
-    environment:
-     - MYSQL_PASSWORD=root
-     - MYSQL_ROOT_PASSWORD=root
-     - MYSQL_DATABASE=db_name
-
-volumes:
-  db_mysql_vol:

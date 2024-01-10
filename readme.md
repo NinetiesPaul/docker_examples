@@ -1,12 +1,17 @@
-## This is a PHP base app running on Docker
+# Docker PHP
 
-Run ```docker-compose exec web composer``` to install a framework or any library, eg:
+This is a repository for many different options of pre-configured docker containers for a PHP development environment. Check different project branches for different options.
 
-- **```docker-compose exec web composer create-project symfony/skeleton {app_name}``` to create a Symfony App**
-- **```docker-compose exec web composer create-project laravel/laravel {app_name}``` to create a Laravel App**
+## {main} branch
 
-Then start coding!
+PHP running on it's built in server
 
-¹ You may have to move the app files around since the creation command will create a folder with the app name and the app files in it.
+### How to Run
 
-² You may need to run a ```docker-compose exec web chmod -R 777 {some folder}``` for dealing with permissions errors
+To build the containers
+```docker-compose build```
+
+To run the containers
+```docker-compose up -d```
+
+Open your browser and access `http://localhost:8015`
