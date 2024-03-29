@@ -1,33 +1,18 @@
-# Docker PHP
-
-This is a repository with many different options of pre-configured docker containers for a PHP development environment. Check different project branches for different options.
+# Docker Examples
+This is a repository with some options of pre-configured docker containers for development environment. Check different project branches for different options.
 
 ## Branches
-
-### {main} branch
-
+### _base_php_ branch
 PHP running on it's built in server
 
-### {apache_decoupling} branch
+### _php_apache_decoupling_ branch
+PHP with Apache on separate container with storage
 
-PHP with Apache server on separate container, with database options
+### _php_mysql_ branch
+PHP coupled with Apache and MySQL for storage
 
-### {db_mysql} branch
+### _php_pgsql_ branch
+PHP coupled with Apache and PostgreSQL for storage
 
-PHP coupled with Apache and MySQL as Database option
-
-### {db_pgl} branch
-
-PHP coupled with Apache and PostgreSQL as Database option
-
-## How to Run
-
-Unless stated otherwise:
-
-To build the containers run
-```docker-compose build```
-
-Then to run the containers execute
-```docker-compose up -d```
-
-Open your browser and access `http://localhost:8015`
+### _react_ branch
+Container with NodeJs and ReactJs
