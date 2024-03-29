@@ -1,12 +1,25 @@
-## This is a PHP base app running on Docker
+# Base PHP
+This branch contains a docker container of PHP coupled with Apache with PostgreSQL for storage
 
-Run ```docker-compose exec web composer``` to install a framework or any library, eg:
+## How to Run
+1. Install the container
+```
+docker-compose build
+```
 
-- **```docker-compose exec web composer create-project symfony/skeleton {app_name}``` to create a Symfony App**
-- **```docker-compose exec web composer create-project laravel/laravel {app_name}``` to create a Laravel App**
+2. Run the container
+Then to run the containers execute
+```
+docker-compose up -d
+```
 
-Then start coding!
+Run either 
 
-¹ You may have to move the app files around since the creation command will create a folder with the app name and the app files in it.
-
-² You may need to run a ```docker-compose exec web chmod -R 777 {some folder}``` for dealing with permissions errors
+```
+docker-compose exec web composer create-project symfony/skeleton {app_name}
+```
+To create a Symfony App; or
+```
+docker-compose exec web composer create-project laravel/laravel {app_name}
+```
+to create a Laravel App
