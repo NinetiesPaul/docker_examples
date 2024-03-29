@@ -1,5 +1,5 @@
 # Base PHP
-This branch contains a docker container with PHP running on it's builtin server
+This branch contains a docker container of PHP coupled with Apache server with MySQL for storage
 
 ## How to Run
 1. Install the container
