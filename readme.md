@@ -1,4 +1,4 @@
-# Base PHP
+# PHP/Apache and PostgreSQL
 This branch contains a docker container of PHP coupled with Apache with PostgreSQL for storage
 
 ## How to Run
