@@ -1,4 +1,4 @@
-# Base PHP
+# PHP/Apache with MySQL
 This branch contains a docker container of PHP coupled with Apache with MySQL for storage
 
 ## How to Run
