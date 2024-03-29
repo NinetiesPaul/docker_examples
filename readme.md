@@ -1,33 +1,7 @@
-# Docker PHP
+# Docker-React
 
-This is a repository with many different options of pre-configured docker containers for a PHP development environment. Check different project branches for different options.
+This is a simple React application on a Docker container
 
-## Branches
+## Setting up
 
-### {main} branch
-
-PHP running on it's built in server
-
-### {apache_decoupling} branch
-
-PHP with Apache server on separate container, with database options
-
-### {db_mysql} branch
-
-PHP coupled with Apache and MySQL as Database option
-
-### {db_pgl} branch
-
-PHP coupled with Apache and PostgreSQL as Database option
-
-## How to Run
-
-Unless stated otherwise:
-
-To build the containers run
-```docker-compose build```
-
-Then to run the containers execute
-```docker-compose up -d```
-
-Open your browser and access `http://localhost:8015`
+Just run `docker-compose build` for docker image creation then `docker-compose up -d` to start it. To see the application vist `http://localhost:3000` on your web browser
