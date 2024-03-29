@@ -1,7 +1,19 @@
-# Docker-React
+# ReactJs
+This branch contains a docker container with NodeJS and ReactJs
 
-This is a simple React application on a Docker container
+## How to Run
+1. Install the container
+```
+docker-compose build
+```
 
-## Setting up
+2. Run the container
+Then to run the containers execute
+```
+docker-compose up -d
+```
 
-Just run `docker-compose build` for docker image creation then `docker-compose up -d` to start it. To see the application vist `http://localhost:3000` on your web browser
+Open your browser and access the address
+```
+http://localhost:3000
+```
